@@ -38,10 +38,16 @@ The function will be given a class_size by number of students, odds, and Number_
 
 ```{r}
 urn = 1:365
+bank=0
+for (i in 1:637){
+  
+}
 class = sample(urn, size=35, replace=TRUE)
-classSorted = sort(class)
+classSorted=sort(class)
 print(classSorted)
+print(length(unique(class)))
 ```
+Because there is only 33 unique, their has to be at least one pair. The pair in the chart is 249. Therefore Brownlow won this bet.
 
 
 # In the class and payoff as described  If you highered 40 brownlow substitute teachers to do the same thing that Brownlow did then.
