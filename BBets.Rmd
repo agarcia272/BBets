@@ -36,18 +36,22 @@ There are 3 questions and there should be at least 3 separate commits, at least 
 
 The function will be given a class_size by number of students, odds, and Number_of_times brownlow made the bet.  It will give you back how much Brownlows earnings were. We will use it to answer our three questions below. If you can, improve this function by giving default values to some of its inputs. 
 
+## return with 35 students, 2:1 paid out
+
 ```{r}
 urn = 1:365
 bank=0
 for (i in 1:637){
-  
+  class = sample(urn, size=35, replace=TRUE)
+  if (length(unique(class))== 35){
+    bank = bank - 2
+  }else{
+    bank = bank + 1
+  }
 }
-class = sample(urn, size=35, replace=TRUE)
-classSorted=sort(class)
-print(classSorted)
-print(length(unique(class)))
+print(bank)
 ```
-Because there is only 33 unique, their has to be at least one pair. The pair in the chart is 249. Therefore Brownlow won this bet.
+Brownlow bet 637 times, in those 637 times he won 283 dollars.
 
 
 # In the class and payoff as described  If you highered 40 brownlow substitute teachers to do the same thing that Brownlow did then.
