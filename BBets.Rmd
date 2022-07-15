@@ -96,6 +96,8 @@ The 95% CI is mean(saveBank) +/-2*sd(saveBank)
 
 <!--Explain and display the results of your method of coming up with the estimate of professor Brownlows betting profits!-->
 
+## Question 2
+
 ```{r}
 numClass = 28
 # my guess at fair odds = $xxx : $1
@@ -112,10 +114,30 @@ print(mean(saveBank))
 hist(saveBank)
 ```
 
-to make the game fair, Brownlow should pay out `r mean(saveBank)`
+for it to be a fair bet the class size should be `r numClass`
+
+## Question 3 How much money would Brownlow be expected to end up with if the bets went as described.
+
+```{r}
+numClass = 35
+# my guess at fair odds = $xxx : $1
+odds = 2
+countoDo = 637
+
+saveBank = vector('numeric')
+
+for (k in 1:35){
+  bank = (BrLw(numClass,odds,countoDo))
+  saveBank[k] = bank
+}
+print(mean(saveBank))
+hist(saveBank)
+```
+
+Brown would expect to make about `r mean(saveBank)`
 
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If professor Brownlow is consistantly making or losing money how could he change his payout so that his profits center on zero?  Also discuss what size his class should be in order to have his current scheme balance at zero profit.!-->
 
-Bor
+In conclusion Dr, Brownlow would win his bet and make about $280 dollars.
